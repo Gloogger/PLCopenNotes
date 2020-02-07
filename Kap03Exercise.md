@@ -19,9 +19,10 @@ The IDE I used for the exercises is [AKENMOTION](http://www.gatherwin.com.cn/En/
 ***
 
 # Hardware Platform
-The hardware platform I used is a teaching platform manufactured by GATHERWIN. It consists of two Omoron motors, one touch screen and a button panel. The platform is sufficient for most of the exercise involving motion control.
+The hardware platform I used is a teaching platform manufactured by GATHERWIN. It consists of two Omoron motors, one touch screen and a button panel. The platform is sufficient for most of the exercises involving motion control.
 ![hardware platform](assets/images/hardware_platform.jpg)
 
+***
 
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='#top';">Back To Top</button>
