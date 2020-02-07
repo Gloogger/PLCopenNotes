@@ -30,7 +30,7 @@ One way to overcome the aforesaid disadvantages is to replace the pure mechanica
 ***
 
 # Code
-'''
+```
 PROGRAM PLC_PRG
 VAR
 	fbPower1, fbPower2 	:	SM3_Basic.MC_Power;
@@ -47,9 +47,9 @@ VAR
 	gearRatioNumerator	:	Uint;
 	gearRatioDemonimator:	UINT;
 END_VAR
-'''
+```
 
-'''
+```
 IF myEnable THEN
 	fbPower1(Axis:=myAxis1, Enable:=1, bRegulatorOn:=1, bDriveStart:=1);
 	fbPower2(Axis:=myAxis2, Enable:=1, bRegulatorOn:=1, bDriveStart:=1);
@@ -107,7 +107,7 @@ CASE nState OF
 		END_IF
 		nState:=0;
 END_CASE
-'''
+```
 
 # Summary
 blah blah blah
