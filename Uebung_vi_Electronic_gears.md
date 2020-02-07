@@ -27,8 +27,10 @@ One way to overcome the aforesaid disadvantages is to replace the pure mechanica
 # Planning
 ![flow chart](assets/images/flow_chart_electronic_gear.jpg)
 
+***
+
 # Code
-'''reStructuredTest
+'''
 PROGRAM PLC_PRG
 VAR
 	fbPower1, fbPower2 	:	SM3_Basic.MC_Power;
@@ -47,7 +49,68 @@ VAR
 END_VAR
 '''
 
+'''
+IF myEnable THEN
+	fbPower1(Axis:=myAxis1, Enable:=1, bRegulatorOn:=1, bDriveStart:=1);
+	fbPower2(Axis:=myAxis2, Enable:=1, bRegulatorOn:=1, bDriveStart:=1);
+END_IF
+readAxisStatus();
+
+CASE nState OF
+	0:	(* Check whether the motors are enabled *)
+		IF fbPower1.Status AND fbPower2.Status THEN
+			IF statusX = 'StandStill' AND statusY = 'StandStill' THEN
+				nState:=1;
+			ELSE 
+				runReset();
+				IF resetDone THEN
+					nState:=1;
+					resetDone:=0;
+				ELSE
+					nState:=0;
+				END_IF
+			END_IF
+		END_IF
+	1:	(* Check Start button *)
+		fbStartRtrig(CLK:=startFlag);
+		IF fbStartRtrig.Q THEN
+			// initialize GearIn & MoveVel
+			// jump to nState 2
+			fbGearIn(Master:=myAxis1, Slave:=myAxis2, Execute:=0);
+			fbMoveVel(Axis:=myAxis1, Execute:=0);
+			nState:=2;
+		END_IF
+	2:	(* Execute MoveVel(Axis1) and couple the gears *)
+		fbGearIn(Master:=myAxis1, Slave:=myAxis2, Execute:=1, RatioNumerator:=gearRatioNumerator, RatioDenominator:=gearRatioDemonimator, Acceleration:=7200, Deceleration:=7200);
+		// check if coupling is finished, if so, execute MoveVelocity
+		fbMoveVel(Axis:=myAxis1, Execute:=fbGearIn.InGear, Velocity:=360, Acceleration:=7200, Deceleration:=7200, Direction:=SM3_Basic.MC_DIRECTION.positive);
+		IF fbMoveVel.InVelocity THEN
+			fbStopRtrig(CLK:=stopFlag);
+			IF fbStopRtrig.Q THEN
+				nState:=3;
+			END_IF
+		END_IF
+		
+	3:	(* Check Stop Button *)
+		fbGearOut(Slave:=myAxis2, Execute:=1);
+		IF fbGearOut.Done THEN
+			fbStop1(Axis:=myAxis1, Execute:=1, Deceleration:=7200);
+			IF fbStop1.Done THEN
+				nState:=4;
+				fbStop1(Axis:=myAxis1, Execute:=0);
+			END_IF
+		END_IF
+	4:
+		fbStop2(Axis:=myAxis2, Execute:=1, Deceleration:=7200); 
+		IF fbStop2. Done THEN
+			fbStop2(Axis:=myAxis2, Execute:=0);
+		END_IF
+		nState:=0;
+END_CASE
+'''
+
 # Summary
+blah blah blah
 
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='#top';">Back To Top</button>
