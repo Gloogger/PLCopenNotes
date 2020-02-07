@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 title: 'Kapitel II: Why PLCopen?'
-description: 
+description: Explain the telos of PLCopen standard
 is_project_page: false
 ---
 
