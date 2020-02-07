@@ -12,48 +12,7 @@ is_project_page: false
 <span style="float:right;"><button type="button" onclick="window.location.href='ch3.html';">Next</button></span>
 </p>
 
-## Useful Notes and Equations
-Before diving into the quesitons, some of the most handy notes and equations will be summarized in this section.
-### Tables
-All pictures, tables, charts, unless noted otherwise, are taken from \[1].
-![Comman Joints and their DoF](assets/images/kapII_pic_1.jpg)
-
-### Equations
-General idea about degree of freedom (DoF):
-$$
-\begin{align}
-    \begin{split}
-        \text{DoF} &= (\text{sum of freedoms of the points}) - (\text{No. of independent constraints})\\
-        &= (\text{sum of freedoms of the bodies}) - (\text{No. of independent constraints})\\
-    \end{split}
-\end{align}
-$$
-#### Grübler's Formula
-$$
-\begin{align}
-    \begin{split}
-        \text{DoF} &= m(N-1)-\Sigma_{i=1}^{J}c_{i}\\
-        &= m(N-1-J)+\Sigma_{i=1}^{J}f_{i}\\
-        \text{where } m&=\text{DoF of a rigid body. For planar, m=3; for spatial, m=6}\\
-        N&=\text{No. of links, always add 1 to count for the ground}\\
-        J&=\text{No. of joints}\\
-        c_{i}&=\text{No. of constraints provided by ith joint}\\
-        f_{i}&=\text{No. of DoF provided by ith joint}
-    \end{split}
-\end{align}
-$$
-
-***
-
-## Textbook Exercises Attempts
-> Exercise 2.1 Using the methods of Section 2.1 derive a formula, in terms of n, for the number of degrees of freedom of a rigid body in n-dimensional space. Indicate how many of these dof are translational and how many are rotational. Describe the topology of the C-space (e.g., for n = 2, the topology is R2 × S1).
-
-
-***
-
-## References
-
-[1] blah blah blah
+A Coursera course called [Modern Robotics](https://www.coursera.org/specializations/modernrobotics) produced by Northwestern University covers the motion control theory in great detail. I found that course extremely helpful to me. You can check my notes taken for that course at [here](https://gloogger.github.io/Modern_Robotics_Notes/).
 
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='#top';">Back To Top</button>
