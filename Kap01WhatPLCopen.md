@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: 'Kapitel II: Why PLCopen?'
+title: 'Kapitel I: What is PLCopen?'
 description: Explain the telos of PLCopen standard
 is_project_page: false
 ---
