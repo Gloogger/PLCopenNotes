@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: 'Kapitel I: Motion Control Theory'
+title: 'Kapitel II: Motion Control Theory'
 description: Notes on motion control theory.
 is_project_page: false
 ---
