@@ -12,4 +12,4 @@ The notes here are taken for the motion control standard _PLCopen IEC61131-3_ du
 * [**Kapitel I: What is PLCopen and IEC61131-3?**](Kap01WhatPLCopen.html)
 * [**Kapitel II: Motion Control Theory**](Kap02MCT.html)
 * [**Kapitel III: Exercises Intro**](Kap03Exercise.html)
-  * [**Electronic Gears**](Electronic_gears.html)
+  * [**Übung vi: Electronic Gears**](Uebung_vi_Electronic_gears.html)
