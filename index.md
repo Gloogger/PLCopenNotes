@@ -4,7 +4,7 @@ mathjax: true
 title: 'PLCopen Notes'
 description: Logon didonai
 ---
-The notes here are taken for the motion control standard 'PLCopen IEC61131-3' during my internship @Gatherwin. These notes serve as a reminder and quick review material for future use.
+The notes here are taken for the motion control standard _PLCopen IEC61131-3_ during my internship @Gatherwin. These notes serve as a reminder and quick review material for future use.
 
 
 ## **Table of Content**
