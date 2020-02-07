@@ -28,6 +28,24 @@ One way to overcome the aforesaid disadvantages is to replace the pure mechanica
 ![flow chart](assets/images/flow_chart_electronic_gear.jpg)
 
 # Code
+'''reStructuredTest
+PROGRAM PLC_PRG
+VAR
+	fbPower1, fbPower2 	:	SM3_Basic.MC_Power;
+	fbHalt		:		SM3_Basic.MC_Halt;
+	fbStartRtrig, fbStopRtrig 	:	Standard.R_TRIG;
+	fbMoveVel	:	SM3_Basic.MC_MoveVelocity;
+	fbGearIn	:	SM3_Basic.MC_GearIn;
+	fbGearOut	:	SM3_Basic.MC_GearOut;
+	
+	nState		:	INT;
+	myEnable, startFlag, stopFlag :	BOOL;
+	fbStop1, fbStop2:	SM3_Basic.MC_Stop;	
+	
+	gearRatioNumerator	:	Uint;
+	gearRatioDemonimator:	UINT;
+END_VAR
+'''
 
 # Summary
 
