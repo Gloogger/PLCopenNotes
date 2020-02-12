@@ -33,10 +33,32 @@ The Enable type FB on the left will take in:
 
 The Enable type FB on the left will yield:
 1. "Valid". Also a boolean value. This output tells whether the task is accomplished or not;
-2. "Error". BOOL. Tells whether there an error had occurred;
-3. "ErrorID". The datatype _UINT_ means 32-bit unsigned integer, which stores an error code. User could use this error code to find more information.
+2. "Error". BOOL. Tells whether an error had occurred or not;
+3. "ErrorID". The datatype _UINT_ means 32-bit unsigned integer, which stores the error identification code that can be used to find a more comprehensive description of the error.
 
 The Execute type FB on the right will take in:
+1. "Execute". BOOL. Could be coming from a switch button.
+
+The Execute type FB on the right will yield:
+1. "Done". BOOL. Tells whether the task is completed or not;
+2. "Busy". BOOL. Tells whether the task is still in execution or not;
+3. "Error". BOOL. Tells whether an error had occurred or not;
+4. "ErrorID". UINT. Stores an error identification code.
+
+### Closer look at MC_Power
+The following figure shows the actuall interface of the function block _"MC_Power"_. The graphical representation used in the figure is actually a programming language called _**Sequential Function Chart(SFC)**_. SFC is often employed in big projects so as to give a lucid overview of the program structure.
+<p align="center">
+    <img src="https://lh4.googleusercontent.com/p1ajqmwKNEVY0IbLMEEPUlOaC3m_ZtiRNHgz-rcHkx4zQSDlFtsNsuheUHSohyPOi_MHbNMvUDFUinkr87c1=w2100-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_4.png" aria-hidden="true" width="500">
+</p>
+This function block can also be expressed in _**Structured Text(ST)**_, which is also a frequently used programming language.
+```
+PROGRAM PLC_PRG
+VAR
+    fbPower     :   MC_Power;   // similar to 'import numpy as np' in python
+```
+```
+fbPower(Axis := myWarpDrive_1, Enable:= TRUE, bDriveStart := TRUE, bRegulatorOn := TRUE);   // Enable Axis
+```
 
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='#top';">Back To Top</button>
