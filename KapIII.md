@@ -23,6 +23,21 @@ Consider it as some sort of interface that tells the user to feed in some data, 
 </p>
 By _"enable"_ it simply means to power up the motor, so the rotor is no longer free to rotate. _MC_Power_ will take in some data, tells the actual implementation to do the powering stuff, and then output some other data. _MC_Power_ is one of the most commonly used FB, and we will take a much detailed look at it later.
 
+### Two types of FB: Enable and Execute
+There are two types of function blocks, namely the "Enable" type and the "Execute" type. Generally, these two types of FB have the following interface:
+<p align="center">
+    <img src="https://lh6.googleusercontent.com/_PhNW35qFPgOTRNTh0fpo6F1rBWrsu134fXYIxNf50b_s9YxgQdnCFOuEexs7V3ruuc_7gjxDmRpO0n2cixm=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_3.png" aria-hidden="true">
+</p>
+The Enable type FB on the left will take in:
+1. "Enable". A boolean value (BOOL for short). It could be an input from a push button.
+
+The Enable type FB on the left will yield:
+1. "Valid". Also a boolean value. This output tells whether the task is accomplished or not;
+2. "Error". BOOL. Tells whether there an error had occurred;
+3. "ErrorID". The datatype _UINT_ means 32-bit unsigned integer, which stores an error code. User could use this error code to find more information.
+
+The Execute type FB on the right will take in:
+
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='#top';">Back To Top</button>
 <p>
