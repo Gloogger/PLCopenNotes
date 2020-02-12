@@ -54,10 +54,13 @@ This function block can also be expressed in _**Structured Text(ST)**_, which is
 ```
 PROGRAM PLC_PRG
 VAR
-    fbPower     :   MC_Power;   // similar to 'import numpy as np' in python
+    fbPower     :   MC_Power;   
+    // similar to 'import numpy as np' in python
+END_VAR
 ```
 ```
-fbPower(Axis := myWarpDrive_1, Enable:= TRUE, bDriveStart := TRUE, bRegulatorOn := TRUE);   // Enable Axis
+fbPower(Axis := myWarpDrive_1, Enable:= TRUE, bDriveStart := TRUE, bRegulatorOn := TRUE);   
+// Enable Axis
 ```
 
 <p style="text-align:center;">
