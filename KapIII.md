@@ -19,7 +19,7 @@ This is a function block (FB for short):
 </p>
 Consider it as some sort of interface that tells the user to feed in some data, and then returns some other data to the user. FB only specifies what kind of data goes into it, what ought to be achieved using these input data, and what kind of data it should output. N.B. that FB itself does not do anything at all, it serves soely as an **interface**, the job is left for hardware suppliers to implement. For example, the FB called _"MC_Power"_ is used to _"enable the axes"_: 
 <p align="center">
-    <img src="https://lh4.googleusercontent.com/qNrR9wRfCAlQYjll-7jHg9cJ5gdpKGGazDOZ9DPQhuQi-SVQpGqzPazpPn0DzyV5WKek0EcM9p6srG865f4f=w2100-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_3.png" aria-hidden="true">
+    <img src="https://lh6.googleusercontent.com/TpzC2s9elMP6On1xcZ_jeuKHoas6wxm4ZJ1slgOY2qJzky3yszIg1gTkMHv4Q9Ujd9SHaFZNrOh_uoBF3TEJ=w2100-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_2.png" aria-hidden="true" width="200">
 </p>
 By _"enable"_ it simply means to power up the motor, so the rotor is no longer free to rotate. _MC_Power_ will take in some data, tells the actual implementation to do the powering stuff, and then output some other data. _MC_Power_ is one of the most commonly used FB, and we will take a much detailed look at it later.
 
