@@ -103,6 +103,8 @@ As shown above, the typical behaviour of Execute/Done type FB can be splitted in
 * Case 3:
   * Normal operation.
   
+***
+  
 #### Execute/InXXX Type
 <p align="center">
     <img src="https://lh3.googleusercontent.com/_WVEE9rLa4hAyBCT2X2bGfLkHHLlXs-XMlyRencOlPAZk2Guk2F3dIvo7COzEyTpPerzpbCQSOjFQTnY9CU2=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_9.png" aria-hidden="true" width="650">
@@ -114,7 +116,11 @@ As shown above, the typical behaviour of Execute/InXXX type FB can also be split
 ## More on MC_Power
 The following figure shows the actuall interface of the function block _"MC_Power"_. The graphical representation used in the figure is actually a programming language called _**Sequential Function Chart(SFC)**_. SFC is often employed in big projects so as to give a lucid overview of the program structure.
 <p align="center">
-   
+   <img src="https://lh3.googleusercontent.com/rwP5OBucAEmFYqyKXKnGcVw2CKKURAyI8hWBq-t6N5o7fDk-kJEdUE8uwyyniro7RBcKec5s4hcMahVn7XTQ=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_10.png" aria-hidden="true" width="450">
+</p>
+As you can see, the interface is much the same to the general interface of Enable-type FB. Tip: most of the IDEs are equipped with help manual which allows you to consult the definition of each variables. Here is a screenshot of the description of the _MC_Power_ FB:
+<p align="center">
+    <img src="https://lh3.googleusercontent.com/ZBcHMvTDuDOcvxieXesMRsheXjaj8WjomTDD2PG8zxoA2Dit8EdmV52DDemKFmI-lBOD7NwYmyrOPWhH48vW=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_11.png" aria-hidden="true">
 </p>
 
 The horizontal line inside the FB means that the FB will not store the data locally but instead reference it. This is because the datatype _AXIS_REF_ may be too large to be stored locally (it might just contain >100 variables!) in the FB. Also, _AXIS_REF_ may be different for different hardware. For instance, motor manufacturerd by supplier A might have the following _AXIS_REF_:
