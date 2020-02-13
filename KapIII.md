@@ -14,20 +14,26 @@ is_project_page: false
 
 # What is Function Block after all?
 This is a function block (FB for short):
+
 <p align="center">
-    <img src="https://lh3.googleusercontent.com/ngotE6zvjkKjTvIp-zRD9Cxw7icwo6gZeeubb3dVAInpfDwyZ8bv45Mflv7WVI5ImagK7hiB5UP56qOt5TZx=w2880-h1282-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_1.png" aria-hidden="true" width="200">
+    <img src="https://drive.google.com/uc?export=view&id=1amHJybsa-439PakmB722y4ABIhgTumHv" alt="fig_1_1.jpg" width="250">
 </p>
+
 Consider it as some sort of interface that tells the user to feed in some data, and then returns some other data to the user. FB only specifies what kind of data goes into it, what ought to be achieved using these input data, and what kind of data it should output. N.B. that FB itself does not do anything at all, it serves soely as an **interface**, the job is left for hardware suppliers to implement. For example, the FB called _"MC_Power"_ is used to _"enable the axes"_: 
+
 <p align="center">
-    <img src="https://lh6.googleusercontent.com/TpzC2s9elMP6On1xcZ_jeuKHoas6wxm4ZJ1slgOY2qJzky3yszIg1gTkMHv4Q9Ujd9SHaFZNrOh_uoBF3TEJ=w2100-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_2.png" aria-hidden="true" width="200">
+    <img src="https://drive.google.com/uc?export=view&id=16vzgxgpw30zjiu4_O8BQoKWiwu9ma9ZS" alt="fig_1_2.jpg" width="250">
 </p>
+
 By _"enable"_ it simply means to power up the motor, so the rotor is no longer free to rotate. _MC_Power_ will take in some data, tells the actual implementation to do the powering stuff, and then output some other data. _MC_Power_ is one of the most commonly used FB, and we will take a much detailed look at it later.
 
 ## Two Types of FB: Enable and Execute
 There are two types of function blocks, namely the "Enable" type and the "Execute" type. Generally, these two types of FB have the following interface:
+
 <p align="center">
-    <img src="https://lh6.googleusercontent.com/_PhNW35qFPgOTRNTh0fpo6F1rBWrsu134fXYIxNf50b_s9YxgQdnCFOuEexs7V3ruuc_7gjxDmRpO0n2cixm=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_3.png" aria-hidden="true">
+    <img src="https://drive.google.com/uc?export=view&id=1nkDNWHRuA9dm7_61bAqOTLhZwY213XyZ" alt="fig_1_3.jpg">
 </p>
+
 The Enable type FB on the left will take in:
 1. "Enable". A boolean value (BOOL for short). It could be an input from a push button.
 
@@ -49,18 +55,24 @@ The Execute type FB on the right will yield:
 
 ### Closer Look at Enable-FBs
 Most of the Enable-FBs has the following interface:
+
 <p align="center">
-    <img src="https://lh5.googleusercontent.com/cf7LSFnNGY1aptWmnXN8RiN3FQ2vEsiM1gNxCsK9Kr6E9SvF9XbKEjz4bodq1Q-ij7EjKkwiPAta9UsC7cEK=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_4.png" aria-hidden="true" width="550">
+    <img src="https://drive.google.com/uc?export=view&id=1EaQM9fQVW1O0a-6R6Df5jPipTyRb7E56" alt="fig_1_4.jpg" width="550">
 </p>
+
 The variables squared by the orange line are the typical variables in such FBs. In most motion control related FBs, _Var1_ would be "Axis" accepting input datatype "AXIS_REF". We will touch on this later. The misterious horizontal line inside the FB will also be explained in section **More on MC_Power**.
 In order to describe the behaviour of Enable-type FB, a tool called **Sequence Diagram** would be conducive here. The seqeunce diagram adopted here is made self-explanatory by the following sketch:
+
 <p align="center">
-    <img src="https://lh5.googleusercontent.com/tpvNvAjUleCM4cDDgIXxv_23Y7GwIAkJowcmdsQSB8hJ-hjMULFTgoitmuW28KPBFn10GgJuGWnySRDBwi4B=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_5.png" aria-hidden="true" width="550">
+    <img src="https://drive.google.com/uc?export=view&id=1KZc53LnkzE0GEWj602GyqWpQciNu7D9R" alt="fig_1_5.jpg" width="550">
 </p>
+
 With the help of sequence diagram, the common behaviour of Enable-type FB can be illustrated using the following cases, as shown below.
+
 <p align="center">
-    <img src="https://lh3.googleusercontent.com/uo9XGG3i4xenrk_dfZ-jkNjjAr4DA2HuIKPhe1P0UUIiXUtz5pK1q9iUtHCfHQTaW8C0mYhj3LYdcVIXSvb6=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_6.png" aria-hidden="true" width="650">
+    <img src="https://drive.google.com/uc?export=view&id=11vMMRoxFYUgkcABPMddzmqXKh-BCQ0gf" alt="fig_1_6.jpg" width="650">
 </p>
+
 * Case 1
   * At $$t_{1}$$, the button is pushed and _Enable_ is switched to TRUE. Immediately, _Busy_ is also turned on. Notice that _Valid_ is not turned on simultaneously as it may requires time to complete the task.
   * At $$t_{3}$$, the button is released and _Enable_ is switched off. _Valid_ will be turned off immediately, but _Busy_ will stay on a little bit. There is a time lag because it takes time for the program to store data.
@@ -77,9 +89,11 @@ With the help of sequence diagram, the common behaviour of Enable-type FB can be
 
 ### Closer look at Execute-FBs
 Most of the Execute-FBs has the following interface:
+
 <p align="center">
-    <img src="https://lh5.googleusercontent.com/Siu9OrXlYOkGXI9zIOfbYw0BfK2yCXaS5gMUwAJYSAi8orzOOtttBk5stdXYNsoH-TfQgT458S1WvY2LxX87=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_7.png" aria-hidden="true" width="550">
+    <img src="https://drive.google.com/uc?export=view&id=1oQ_VFRa6VtDx6cVESXIIPsVZDVMuROE9" alt="fig_1_7.jpg" width="550">
 </p>
+
 On the RHS, there are two new output variables, namely the _Done/InXXX_, the _CommandAborted_, and the _Active_:
 * _InXXX_: It could be _InVelocity_, _InGear_, _InSync_, etc. Taking _InVelocity_ as an example, it will be turned on when the axis has reached a specified velocity given sometime to accelerate. In general, for motion control that involves acceleration, deceleration, or synchronization, the corresponding FB will have _InXXX_ in place of _Done_.
 * _CommandAborted_: It will be turned on when the execution of the current FB is interrupted by other FB.
@@ -90,9 +104,11 @@ Since there are two sub-types of the Execute-FB, viz. the Execute/Done sub-type 
 ***
 
 #### Execute/Done Type
+
 <p align="center">
-    <img src="https://lh3.googleusercontent.com/YuxUd7yBO39OT23Y9ac8u78VGDf7oOrDoQwaVAnA5JWorb1DizlBMgGCMaGk6_1JhxBVxrnVkh8FEmrNoY76=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_8.png" aria-hidden="true" width="650">
+    <img src="https://drive.google.com/uc?export=view&id=12aEX_9c4g4WYG6pOMUvKrctl0Wu-j09V" alt="fig_1_8.jpg" width="650">
 </p>
+
 As shown above, the typical behaviour of Execute/Done type FB can be splitted into 3 cases:
 * Case 1:
   * At $$t_{1}$$, a button is pushed so _Execute_ turns on. Immediately, _Busy_ turns on to show that the FB is working on it. After some lag, _Active_ turns on to display that the axis is adjusting itself towards end state.
@@ -106,21 +122,26 @@ As shown above, the typical behaviour of Execute/Done type FB can be splitted in
 ***
   
 #### Execute/InXXX Type
+
 <p align="center">
-    <img src="https://lh3.googleusercontent.com/_WVEE9rLa4hAyBCT2X2bGfLkHHLlXs-XMlyRencOlPAZk2Guk2F3dIvo7COzEyTpPerzpbCQSOjFQTnY9CU2=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_9.png" aria-hidden="true" width="650">
+    <img src="https://drive.google.com/uc?export=view&id=145TQ-pQBXx-ywnS7N88WNwx0b-aD_LGw" alt="fig_1_9.jpg" width="650">
 </p>
+
 As shown above, the typical behaviour of Execute/InXXX type FB can also be splitted into 3 cases. Since the above sketch is quite straightforward, the description is skipped here.
 
 ***
 
 ## More on MC_Power
 The following figure shows the actuall interface of the function block _"MC_Power"_. The graphical representation used in the figure is actually a programming language called _**Sequential Function Chart(SFC)**_. SFC is often employed in big projects so as to give a lucid overview of the program structure.
+
 <p align="center">
-   <img src="https://lh3.googleusercontent.com/rwP5OBucAEmFYqyKXKnGcVw2CKKURAyI8hWBq-t6N5o7fDk-kJEdUE8uwyyniro7RBcKec5s4hcMahVn7XTQ=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_10.png" aria-hidden="true" width="450">
+    <img src="https://drive.google.com/uc?export=view&id=1zAG3frIaMsM432Xlgs4vkxwN69DyTbwI" alt="fig_1_10.jpg" width="450">
 </p>
+
 As you can see, the interface is much the same to the general interface of Enable-type FB. Tip: most of the IDEs are equipped with help manual which allows you to consult the definition of each variables. Here is a screenshot of the description of the _MC_Power_ FB:
+
 <p align="center">
-    <img src="https://lh3.googleusercontent.com/ZBcHMvTDuDOcvxieXesMRsheXjaj8WjomTDD2PG8zxoA2Dit8EdmV52DDemKFmI-lBOD7NwYmyrOPWhH48vW=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_11.png" aria-hidden="true">
+    <img src="https://drive.google.com/uc?export=view&id=1E_E1oCWJvMrX3K04Add8osXuoT4YnwRH" alt="fig_1_11.jpg">
 </p>
 
 The horizontal line inside the FB means that the FB will not store the data locally but instead reference it. This is because the datatype _AXIS_REF_ may be too large to be stored locally (it might just contain >100 variables!) in the FB. Also, _AXIS_REF_ may be different for different hardware. For instance, motor manufacturerd by supplier A might have the following _AXIS_REF_:
