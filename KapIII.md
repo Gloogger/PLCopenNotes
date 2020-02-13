@@ -12,7 +12,7 @@ is_project_page: false
 <span style="float:right;"><button type="button" onclick="window.location.href='ch3.html';">Next</button></span>
 </p>
 
-# What is function block after all?
+# What is Function Block after all?
 This is a function block (FB for short):
 <p align="center">
     <img src="https://lh3.googleusercontent.com/ngotE6zvjkKjTvIp-zRD9Cxw7icwo6gZeeubb3dVAInpfDwyZ8bv45Mflv7WVI5ImagK7hiB5UP56qOt5TZx=w2880-h1282-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_1.png" aria-hidden="true" width="200">
@@ -23,7 +23,7 @@ Consider it as some sort of interface that tells the user to feed in some data, 
 </p>
 By _"enable"_ it simply means to power up the motor, so the rotor is no longer free to rotate. _MC_Power_ will take in some data, tells the actual implementation to do the powering stuff, and then output some other data. _MC_Power_ is one of the most commonly used FB, and we will take a much detailed look at it later.
 
-## Two types of FB: Enable and Execute
+## Two Types of FB: Enable and Execute
 There are two types of function blocks, namely the "Enable" type and the "Execute" type. Generally, these two types of FB have the following interface:
 <p align="center">
     <img src="https://lh6.googleusercontent.com/_PhNW35qFPgOTRNTh0fpo6F1rBWrsu134fXYIxNf50b_s9YxgQdnCFOuEexs7V3ruuc_7gjxDmRpO0n2cixm=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_3.png" aria-hidden="true">
@@ -47,7 +47,7 @@ The Execute type FB on the right will yield:
 
 ***
 
-### Closer look at Enable-FBs
+### Closer Look at Enable-FBs
 Most of the Enable-FBs has the following interface:
 <p align="center">
     <img src="https://lh5.googleusercontent.com/cf7LSFnNGY1aptWmnXN8RiN3FQ2vEsiM1gNxCsK9Kr6E9SvF9XbKEjz4bodq1Q-ij7EjKkwiPAta9UsC7cEK=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_4.png" aria-hidden="true" width="550">
@@ -73,8 +73,43 @@ With the help of sequence diagram, the common behaviour of Enable-type FB can be
   * At $$t_{9}$$, another type of error occurs. This time, the error will not go away automatically, and therefore _Busy_ stays on to solve it. 
   * At sometime between $$t_{10}$$ and $$t_{11}$$, the error is resolved and _Valid_ will be turned on after some time lag.
 
+***
 
 ### Closer look at Execute-FBs
+Most of the Execute-FBs has the following interface:
+<p align="center">
+    <img src="https://lh5.googleusercontent.com/Siu9OrXlYOkGXI9zIOfbYw0BfK2yCXaS5gMUwAJYSAi8orzOOtttBk5stdXYNsoH-TfQgT458S1WvY2LxX87=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_7.png" aria-hidden="true" width="550">
+</p>
+On the RHS, there are two new output variables, namely the _Done/InXXX_, the _CommandAborted_, and the _Active_:
+* _InXXX_: It could be _InVelocity_, _InGear_, _InSync_, etc. Taking _InVelocity_ as an example, it will be turned on when the axis has reached a specified velocity given sometime to accelerate. In general, for motion control that involves acceleration, deceleration, or synchronization, the corresponding FB will have _InXXX_ in place of _Done_.
+* _CommandAborted_: It will be turned on when the execution of the current FB is interrupted by other FB.
+* _Active_: It will be turned on when the axis is carrying out the task.
+
+Since there are two sub-types of the Execute-FB, viz. the Execute/Done sub-type and the Execute/InXXX sub-type, their behaviour defers.
+
+***
+
+#### Execute/Done Type
+<p align="center">
+    <img src="https://lh3.googleusercontent.com/YuxUd7yBO39OT23Y9ac8u78VGDf7oOrDoQwaVAnA5JWorb1DizlBMgGCMaGk6_1JhxBVxrnVkh8FEmrNoY76=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_8.png" aria-hidden="true" width="650">
+</p>
+As shown above, the typical behaviour of Execute/Done type FB can be splitted into 3 cases:
+* Case 1:
+  * At $$t_{1}$$, a button is pushed so _Execute_ turns on. Immediately, _Busy_ turns on to show that the FB is working on it. After some lag, _Active_ turns on to display that the axis is adjusting itself towards end state.
+  * At $$t_{2}$$, the action is suspended by commands from other FBs, therefore _CommandAborted_ turns on. In reaction to that, _Busy_ is forced off.
+  * At $$t_{3}$$, the push button is released so the FB is reset.
+* Case 2:
+  * At $$t_{5}$$, error occurred so _Busy_ is forced off.
+* Case 3:
+  * Normal operation.
+  
+#### Execute/InXXX Type
+<p align="center">
+    <img src="https://lh3.googleusercontent.com/_WVEE9rLa4hAyBCT2X2bGfLkHHLlXs-XMlyRencOlPAZk2Guk2F3dIvo7COzEyTpPerzpbCQSOjFQTnY9CU2=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_9.png" aria-hidden="true" width="650">
+</p>
+As shown above, the typical behaviour of Execute/InXXX type FB can also be splitted into 3 cases. Since the above sketch is quite straightforward, the description is skipped here.
+
+***
 
 ## More on MC_Power
 The following figure shows the actuall interface of the function block _"MC_Power"_. The graphical representation used in the figure is actually a programming language called _**Sequential Function Chart(SFC)**_. SFC is often employed in big projects so as to give a lucid overview of the program structure.
