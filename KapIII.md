@@ -57,6 +57,21 @@ In order to describe the behaviour of Enable-type FB, a tool called **Sequence D
 <p align="center">
     <img src="https://lh5.googleusercontent.com/tpvNvAjUleCM4cDDgIXxv_23Y7GwIAkJowcmdsQSB8hJ-hjMULFTgoitmuW28KPBFn10GgJuGWnySRDBwi4B=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_5.png" aria-hidden="true" width="550">
 </p>
+With the help of sequence diagram, the common behaviour of Enable-type FB can be illustrated using the following cases, as shown below.
+<p align="center">
+    <img src="https://lh3.googleusercontent.com/uo9XGG3i4xenrk_dfZ-jkNjjAr4DA2HuIKPhe1P0UUIiXUtz5pK1q9iUtHCfHQTaW8C0mYhj3LYdcVIXSvb6=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_6.png" aria-hidden="true" width="650">
+</p>
+* Case 1
+  * At $$t_{1}$$, the button is pushed and _Enable_ is switched to TRUE. Immediately, _Busy_ is also turned on. Notice that _Valid_ is not turned on simultaneously as it may requires time to complete the task.
+  * At $$t_{3}$$, the button is released and _Enable_ is switched off. _Valid_ will be turned off immediately, but _Busy_ will stay on a little bit. There is a time lag because it takes time for the program to store data.
+* Case 2
+  * At $$t_{4}$$, the button is pushed and _Enable_ is switched on. 
+  * At $$t_{6}$$, shit happens and _Error_ is turned on. Notice that _Error_ forces _Valid_ to switch off. If the error could disappear by itself, then _Busy_ will be forced off. In this case, the _Enable_ should be turned off to reset the FB back to normal.
+  * At $$t_{7}$$, the button is released and _Enable_ is turned off. Instantly, _Error_ is turned off as well.
+* Case 3
+  * At $$t_{8}$$, the button is turned on.
+  * At $$t_{9}$$, another type of error occurs. This time, the error will not go away automatically, and therefore _Busy_ stays on to solve it. 
+  * At sometime between $$t_{10}$$ and $$t_{11}$$, the error is resolved and _Valid_ will be turned on after some time lag.
 
 
 ### Closer look at Execute-FBs
