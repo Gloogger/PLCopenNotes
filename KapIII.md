@@ -12,7 +12,7 @@ is_project_page: false
 <span style="float:right;"><button type="button" onclick="window.location.href='ch3.html';">Next</button></span>
 </p>
 
-## What is function block after all?
+# What is function block after all?
 This is a function block (FB for short):
 <p align="center">
     <img src="https://lh3.googleusercontent.com/ngotE6zvjkKjTvIp-zRD9Cxw7icwo6gZeeubb3dVAInpfDwyZ8bv45Mflv7WVI5ImagK7hiB5UP56qOt5TZx=w2880-h1282-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_1.png" aria-hidden="true" width="200">
@@ -23,7 +23,7 @@ Consider it as some sort of interface that tells the user to feed in some data, 
 </p>
 By _"enable"_ it simply means to power up the motor, so the rotor is no longer free to rotate. _MC_Power_ will take in some data, tells the actual implementation to do the powering stuff, and then output some other data. _MC_Power_ is one of the most commonly used FB, and we will take a much detailed look at it later.
 
-### Two types of FB: Enable and Execute
+## Two types of FB: Enable and Execute
 There are two types of function blocks, namely the "Enable" type and the "Execute" type. Generally, these two types of FB have the following interface:
 <p align="center">
     <img src="https://lh6.googleusercontent.com/_PhNW35qFPgOTRNTh0fpo6F1rBWrsu134fXYIxNf50b_s9YxgQdnCFOuEexs7V3ruuc_7gjxDmRpO0n2cixm=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_3.png" aria-hidden="true">
@@ -45,12 +45,53 @@ The Execute type FB on the right will yield:
 3. "Error". BOOL. Tells whether an error had occurred or not;
 4. "ErrorID". UINT. Stores an error identification code.
 
-### Closer look at MC_Power
+***
+
+### Closer look at Enable-FBs
+Most of the Enable-FBs has the following interface:
+<p align="center">
+    <img src="https://lh5.googleusercontent.com/cf7LSFnNGY1aptWmnXN8RiN3FQ2vEsiM1gNxCsK9Kr6E9SvF9XbKEjz4bodq1Q-ij7EjKkwiPAta9UsC7cEK=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_4.png" aria-hidden="true" width="550">
+</p>
+The variables squared by the orange line are the typical variables in such FBs. In most motion control related FBs, _Var1_ would be "Axis" accepting input datatype "AXIS_REF". We will touch on this later. The misterious horizontal line inside the FB will also be explained in section **More on MC_Power**.
+In order to describe the behaviour of Enable-type FB, a tool called **Sequence Diagram** would be conducive here. The seqeunce diagram adopted here is made self-explanatory by the following sketch:
+<p align="center">
+    <img src="https://lh5.googleusercontent.com/tpvNvAjUleCM4cDDgIXxv_23Y7GwIAkJowcmdsQSB8hJ-hjMULFTgoitmuW28KPBFn10GgJuGWnySRDBwi4B=w2880-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_5.png" aria-hidden="true" width="550">
+</p>
+
+
+### Closer look at Execute-FBs
+
+## More on MC_Power
 The following figure shows the actuall interface of the function block _"MC_Power"_. The graphical representation used in the figure is actually a programming language called _**Sequential Function Chart(SFC)**_. SFC is often employed in big projects so as to give a lucid overview of the program structure.
 <p align="center">
-    <img src="https://lh4.googleusercontent.com/p1ajqmwKNEVY0IbLMEEPUlOaC3m_ZtiRNHgz-rcHkx4zQSDlFtsNsuheUHSohyPOi_MHbNMvUDFUinkr87c1=w2100-h1380-rw" class="ndfHFb-c4YZDc-HiaYvf-RJLb9c" alt="当前显示fig_1_4.png" aria-hidden="true" width="500">
+   
 </p>
-This function block can also be expressed in _**Structured Text(ST)**_, which is also a frequently used programming language.
+
+The horizontal line inside the FB means that the FB will not store the data locally but instead reference it. This is because the datatype _AXIS_REF_ may be too large to be stored locally (it might just contain >100 variables!) in the FB. Also, _AXIS_REF_ may be different for different hardware. For instance, motor manufacturerd by supplier A might have the following _AXIS_REF_:
+```
+TYPE
+    AXIS_REF : STRUCT
+        AXIS_NO             : UINT;
+        AXIS_TYPE           : WORD;
+        AXIS_NAME           : STRING(255);
+        AXIS_MAX_SPEED      : UINT;
+        ....
+    END_STRUCT;
+END_TYPE
+```
+And that of supplier B has:
+```
+TYPE
+    AXIS_REF : STRUCT
+        AXIS_NAME           : DWORD;
+        AXIS_CODE           : LONG;
+        MAX_WARP_SPEED      : ULINT;
+        ....
+    END_STRUCT;
+END_TYPE
+```
+
+This function block can also be expressed in _**Structured Text(ST)**_, which is also a frequently used programming language conformed to IEC61131-3.
 ```
 PROGRAM PLC_PRG
 VAR
@@ -62,6 +103,7 @@ END_VAR
 fbPower(Axis := myWarpDrive_1, Enable:= TRUE, bDriveStart := TRUE, bRegulatorOn := TRUE);   
 // Enable Axis
 ```
+
 
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='#top';">Back To Top</button>
