@@ -24,5 +24,5 @@ The hardware platform I used is a teaching platform manufactured by GATHERWIN. I
 * [**Kapitel I: What is PLCopen and IEC61131-3?**](KapI.html)
 * [**Kapitel II: Motion Control Theory**](KapII.html)
 * [**Kapitel III: Brief Intro to Function Block**](KapIII.html)
-* **Kapitel IV: Exercises**
-  * [**Übung vi: Electronic Gears**](Uebung_vi_Electronic_gears.html)
+* **Kapitel IV: Weekly Exercises**
+  * [**Übung 2020/03/09: Conveyor Belt Sushi Restaurant](conveyor_belt_sushi.html)
