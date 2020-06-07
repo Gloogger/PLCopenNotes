@@ -2,7 +2,7 @@
 layout: default
 mathjax: true
 title: 'PLCopen Notes'
-description: Logon didonai
+description: Notes and some practice examples
 ---
 The notes here are taken for the motion control standard _PLCopen IEC61131-3_ during my internship @Gatherwin. These notes serve as a reminder and quick review material for future use.
 
@@ -24,5 +24,4 @@ The hardware platform I used is a teaching platform manufactured by GATHERWIN. I
 * [**Kapitel I: What is PLCopen and IEC61131-3?**](KapI.html)
 * [**Kapitel II: Motion Control Theory**](KapII.html)
 * [**Kapitel III: Brief Intro to Function Block**](KapIII.html)
-* **Kapitel IV: Weekly Exercises**
-  * [**Übung 2020/03/09: Conveyor Belt Sushi Restaurant](conveyor_belt_sushi.html)
+* [**Kapitel IV: Weekly Exercises**](KapIV.html)
