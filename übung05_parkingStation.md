@@ -13,7 +13,16 @@ is_project_page: false
 <span style="float:right;"><button type="button" onclick="window.location.href='ch3.html';">Next</button></span>
 </p>
 
-#
+# Program Design
+## Device Hierarchy
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=144tPOrLw4vnmEzM3T_-qE1MG6a5rSsn_" alt="fig_1.png">
+</p>
+
+## HMI Design
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=1bgIUzOesgOdvlN7-hHNwU3WGxtKTCchz" alt="fig_2.png">
+</p>
 
 
 
