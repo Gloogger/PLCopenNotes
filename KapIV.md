@@ -15,7 +15,8 @@ is_project_page: false
 
 # **Table of Content**
 
-* [**Conveyor Belt of a Sushi Restaurant**](übung01_SushiBelt.html)
+* [**Conveyor Belt of a Sushi Restaurant - by Donglin Sui**](übung01_SushiBelt.html)
+* [**Lottery Turntabl - by Panyang Xiang**](übung02_lotteryTurntable.html)
 
 
 <p style="text-align:center;">
