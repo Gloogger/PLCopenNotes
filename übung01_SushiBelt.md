@@ -27,6 +27,18 @@ However, the current conveyor belt sushi restaurant faces the following drawback
 *  Sushi chef does not have access to prompt update on which sushi is the most consumed and required immediate replenishment. This will lead to a longer waiting time for the diners to grab their favorite eel sushi. It will not only affect the dining experience, but also extend the dining time per unit of diners, and eventually pull down the turnover rate;
 *   According to [this research](https://zh.wikipedia.org/wiki/\%E8\%BF\%B4\%E8\%BD\%89\%E5\%A3\%BD\%E5\%8F\%B8), when the conveyor belt is seethed with a sufficient amount of plates, the ideal delivery speed is equivalent to the falling speed of cherry blossoms, that is, five centimeters per second, but when the density of the plates drops, the delivery speed should be appropriately accelerated to eight centimeters per second, so as not to keep the diners in waiting. Current conveyor belt systems generally cannot intelligently adjust the delivery speed in accordance with the varying density of the plates.
 
+In order to solve the aforementioned drawbacks of current systems, this exercise uses ST (structured text) to construct a conveyor belt system that solves the above issues. The program runs on AKENMOTION platform.
+
+# Program Design
+## Sushi Movement
+In order to be able to simulate the movement of sushi on the HMI (human machine interface), I choose to add the picture of the sushi as an image in Visualization, and then set the variable at the _Movement_ of _Absolute Movement_ in the _image_ menu, as shown below in Figure. 1.
+
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=1lIpObCLxJlhlWF4SeBaD0FJ91upWev2M" alt="fig_1.png">
+</p>
+
+
+
 ***
 The omnipotent math shows that:
 
