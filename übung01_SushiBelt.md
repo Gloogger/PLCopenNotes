@@ -39,7 +39,7 @@ In order to be able to simulate the movement of sushi on the HMI (human machine 
 
 Create struct in _Application_ for sushi object:
 
-(Warning! If the code block does not render correctly, try to use Chrome and the latest HTML. If it is still not working for you, view  them on GitHub inventory, the code will always be correctly rendered there.)
+(Warning! If the code block does not render itself correctly, try to use Chrome and the latest HTML. If it is still not working for you, view  them on GitHub inventory, the code will always be correctly rendered there.)
 
 <details>
   <summary>SUSHI Object</summary>
