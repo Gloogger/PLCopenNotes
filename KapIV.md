@@ -17,6 +17,7 @@ is_project_page: false
 
 * [**Conveyor Belt of a Sushi Restaurant - by Donglin Sui**](übung01_SushiBelt.html)
 * [**Lottery Turntabl - by Panyang Xiang**](übung02_lotteryTurntable.html)
+* [**Vending Machine - by Panyang Xiang**](übung03_vendingMachine.html)
 
 
 <p style="text-align:center;">
