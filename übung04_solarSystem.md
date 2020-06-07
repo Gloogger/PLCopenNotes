@@ -32,7 +32,6 @@ STRUCT
     PlanetT : REAL := (period in s);
 ```
 
-### EarthInfo
 
 <details>
     <summary>EarthInfo</summary>
@@ -55,7 +54,6 @@ END_TYPE
 
 </details>
 
-### JupiterInfo
 
 <details>
     <summary>JupitorInfo</summary>
@@ -77,7 +75,6 @@ END_TYPE
 
 </details>
 
-### MarsInfo
 
 <details>
     <summary>MarsInfo</summary>
@@ -99,7 +96,6 @@ END_TYPE
 
 </details>
 
-### MercuryInfo
 
 <details>
     <summary>MercuryInfo</summary>
@@ -123,7 +119,6 @@ END_TYPE
 
 </details>
 
-### NeptuneInfo
 
 <details>
     <summary>NeptuneInfo</summary>
@@ -145,7 +140,6 @@ END_TYPE
 
 </details>
 
-### StaurnInfo
 
 <details>
     <summary>StaurnInfo</summary>
@@ -167,7 +161,6 @@ END_TYPE
 
 </details>
 
-### UranusInfo
 
 <details>
     <summary>UranusInfo</summary>
@@ -189,7 +182,6 @@ END_TYPE
 
 </details>
 
-### VenusInfo
 
 <details>
     <summary>VenusInfo</summary>
