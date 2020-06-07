@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 title: 'Übung: Conveyor Belt of a Sushi Restaurant'
-description: Contributor: Donglin Sui
+description: 'Contributor: Donglin Sui'
 is_project_page: false
 ---
 
@@ -40,8 +40,7 @@ In order to be able to simulate the movement of sushi on the HMI (human machine 
 Create struct in _Application_ for sushi object:
 <details>
   <summary>Sushi Object</summary>
-```
-TYPE SUSHI :
+```TYPE SUSHI :
 STRUCT
     X           :       LREAL;      // X-coordinate of the sushi image
     Y           :       LREAL;      // Y-coordinate of the sushi image
@@ -49,8 +48,7 @@ STRUCT
     VISIBLE     :       BOOL;       // TRUE for visible; FALSE for invisible
     DIRECTION   :       STRING;     // 'FORWARD', 'BACKWARD', 'UPWARD', 'DOWNWARD'
 END_STRUCT
-END_TYPE
-```
+END_TYPE```
 </details>
 
 ***
