@@ -37,7 +37,21 @@ In order to be able to simulate the movement of sushi on the HMI (human machine 
     <img src="https://drive.google.com/uc?export=view&id=1lIpObCLxJlhlWF4SeBaD0FJ91upWev2M" alt="fig_1.png">
 </p>
 
-
+Create struct in _Application_ for sushi object:
+<details>
+  <summary>Sushi Object</summary>
+```
+TYPE SUSHI :
+STRUCT
+    X           :       LREAL;      // X-coordinate of the sushi image
+    Y           :       LREAL;      // Y-coordinate of the sushi image
+    SUSHI_TYPE  :       INT;        // Sushi types in integer ID
+    VISIBLE     :       BOOL;       // TRUE for visible; FALSE for invisible
+    DIRECTION   :       STRING;     // 'FORWARD', 'BACKWARD', 'UPWARD', 'DOWNWARD'
+END_STRUCT
+END_TYPE
+```
+</details>
 
 ***
 The omnipotent math shows that:
