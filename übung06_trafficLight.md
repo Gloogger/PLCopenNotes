@@ -1,8 +1,8 @@
 ---
 layout: post
 mathjax: true
-title: 'Kapitel Nummer'
-description: Einige Beschreibung hier
+title: 'Übung: Traffic Light'
+description: 'Contributor: Panyang Xiang'
 is_project_page: false
 ---
 
