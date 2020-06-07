@@ -20,6 +20,7 @@ is_project_page: false
 * [**Vending Machine**](übung03_vendingMachine.html)
 * [**Solar System**](übung04_solarSystem.html)
 * [**Unmanned Parking Station**](übung05_parkingStation.html)
+* [**Traffic Light**](übung06_trafficLight.html)
 
 
 <p style="text-align:center;">
