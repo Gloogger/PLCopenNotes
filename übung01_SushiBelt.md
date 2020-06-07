@@ -40,7 +40,7 @@ In order to be able to simulate the movement of sushi on the HMI (human machine 
 Create struct in _Application_ for sushi object:
 <details>
   <summary>Sushi Object</summary>
-```TYPE SUSHI :
+<p>```TYPE SUSHI :
 STRUCT
     X           :       LREAL;      // X-coordinate of the sushi image
     Y           :       LREAL;      // Y-coordinate of the sushi image
@@ -48,7 +48,7 @@ STRUCT
     VISIBLE     :       BOOL;       // TRUE for visible; FALSE for invisible
     DIRECTION   :       STRING;     // 'FORWARD', 'BACKWARD', 'UPWARD', 'DOWNWARD'
 END_STRUCT
-END_TYPE```
+END_TYPE``` </p>
 </details>
 
 ***
