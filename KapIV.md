@@ -15,10 +15,11 @@ is_project_page: false
 
 # **Table of Content**
 
-* [**Conveyor Belt of a Sushi Restaurant - by Donglin Sui**](übung01_SushiBelt.html)
-* [**Lottery Turntabl - by Panyang Xiang**](übung02_lotteryTurntable.html)
-* [**Vending Machine - by Panyang Xiang**](übung03_vendingMachine.html)
-* [**Solar System - by Panyang Xiang**](übung04_solarSystem.html)
+* [**Conveyor Belt of a Sushi Restaurant**](übung01_SushiBelt.html)
+* [**Lottery Turntabl**](übung02_lotteryTurntable.html)
+* [**Vending Machine**](übung03_vendingMachine.html)
+* [**Solar System**](übung04_solarSystem.html)
+* [**Unmanned Parking Station**](übung05_parkingStation.html)
 
 
 <p style="text-align:center;">
