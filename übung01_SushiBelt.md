@@ -59,7 +59,7 @@ In the SUSHI STRUCT, X is used to increment the coordinate in the x-axis directi
 
 ### Belt Design
 <p align="center">
-    <img src="https://drive.google.com/uc?export=view&id=1iyxSscqIdF44Ax1D2Mk9xjSSAXEJ9yrm/" alt="fig_2.png">
+    <img src="https://drive.google.com/uc?export=view&id=1iyxSscqIdF44Ax1D2Mk9xjSSAXEJ9yrm" alt="fig_2.png">
 </p>
 
 ### Circulation Module
