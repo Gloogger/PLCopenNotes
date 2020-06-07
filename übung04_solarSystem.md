@@ -10,7 +10,7 @@ is_project_page: false
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='index.html';">Homepage</button>
 <span style="float:left;"><button type="button" onclick="window.location.href='übung03_vendingMachine.html';">Previous</button></span>
-<span style="float:right;"><button type="button" onclick="window.location.href='ch3.html';">Next</button></span>
+<span style="float:right;"><button type="button" onclick="window.location.href='übung05_parkingStation.html';">Next</button></span>
 </p>
 
 # Program Design
