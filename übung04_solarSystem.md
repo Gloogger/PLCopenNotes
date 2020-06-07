@@ -13,15 +13,18 @@ is_project_page: false
 <span style="float:right;"><button type="button" onclick="window.location.href='ch3.html';">Next</button></span>
 </p>
 
-## blah
-**blah**, **blah**, and **blah**r.
+# Program Design
+## Device Hierarchy
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=1k_uDTcZqgyBrmyoKAJYiPRXJIrS2befC" alt="fig_1.png">
+</p>
 
-***
-The omnipotent math shows that:
+## HMI Design
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=1h49IhFYpkVLMX-CRbv4qQuFzy2XOl77s" alt="fig_2.png">
+</p>
 
-$$
-1+1 = 2
-$$
+
 
 ***
 
@@ -44,22 +47,6 @@ Image hosting template:
 </p>
 ```
 
-Frequently used mathcode:
-```
-$$
-\begin{align}
-    \begin{split}
-    \end{split}
-\end{align}
-$$
-
-$$
-\begin{bmatrix}
-       
-\end{bmatrix}
-$$
-
-```
 
 <p style="text-align:center;">
 <button type="button" onclick="window.location.href='#top';">Back To Top</button>
