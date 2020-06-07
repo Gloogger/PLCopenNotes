@@ -25,6 +25,17 @@ $$
 
 ***
 
+<details>
+    <summary>PROGRAM PLC_PRG (VAR Announcement)</summary>
+    
+```
+aaaa
+```
+
+</details>
+
+***
+
 Image hosting template:
 
 ```
