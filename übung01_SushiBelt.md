@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 title: 'Übung: Conveyor Belt of a Sushi Restaurant'
-description: 
+description: Contributor: Donglin Sui
 is_project_page: false
 ---
 
@@ -23,7 +23,9 @@ The pros of this form of sushi restaurants are:
 * Friendly to shy and gauche population.
 
 However, the current conveyor belt sushi restaurant faces the following drawbacks, including:
-
+* A gannet diner would severely undermine the experience of other diners, as he would dramatically reduce the 'plate density' on the belt, while there is usually a time lag for the chef to react. Other diners might need to wait for longer time. Moreover, it is hard not to make a mistake at the checkout when you have four dozens or more plates to count;
+*  Sushi chef does not have access to prompt update on which sushi is the most consumed and required immediate replenishment. This will lead to a longer waiting time for the diners to grab their favorite eel sushi. It will not only affect the dining experience, but also extend the dining time per unit of diners, and eventually pull down the turnover rate;
+*   According to [this research](https://zh.wikipedia.org/wiki/\%E8\%BF\%B4\%E8\%BD\%89\%E5\%A3\%BD\%E5\%8F\%B8), when the conveyor belt is seethed with a sufficient amount of plates, the ideal delivery speed is equivalent to the falling speed of cherry blossoms, that is, five centimeters per second, but when the density of the plates drops, the delivery speed should be appropriately accelerated to eight centimeters per second, so as not to keep the diners in waiting. Current conveyor belt systems generally cannot intelligently adjust the delivery speed in accordance with the varying density of the plates.
 
 ***
 The omnipotent math shows that:
