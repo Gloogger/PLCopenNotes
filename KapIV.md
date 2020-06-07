@@ -15,7 +15,7 @@ is_project_page: false
 
 # **Table of Content**
 
-* [**Conveyor Belt of a Sushi Restaurant**](SushiBelt.html)
+* [**Conveyor Belt of a Sushi Restaurant**](übung01_SushiBelt.html)
 
 
 <p style="text-align:center;">
